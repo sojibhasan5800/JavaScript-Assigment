@@ -1,14 +1,345 @@
-.navbar, footer {
-    transition: background-color 0.3s;
+body {
+    background-image:  radial-gradient(circle, rgba(245, 228, 228, 0.3) 0%, rgba(5, 5, 8, 0.8) 100%), 
+    url('https://t4.ftcdn.net/jpg/02/92/20/37/360_F_292203735_CSsyqyS6A4Z9Czd4Msf7qZEhoxjpzZl1.jpg');
+    background-size: cover;  /* Ensures the image covers the entire screen */
+    background-position: center;  /* Centers the image */
+    background-attachment: fixed;  /* Keeps the background fixed when scrolling */
+    color: white;  /* Adjust text color to stand out */
+    transition: all 16.223s ease-in-out;
+    opacity: 0.7;
+    /* background-color: #2067af; */
+}
+p{
+    color: #08a8f3fd;
+    font-size: 18px;
+}
+/* Container for the search bar */
+.input-group {
+    border: 2px solid #ff004c; /* Add a border */
+    border-radius: 25px; /* Rounded edges */
+    overflow: hidden; /* Hide overflow to round edges */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.search-text{
+    color: aqua;
+   font-weight: bold;
 }
 
-.navbar-dark.bg-dark {
-    background-color: var(--bg-color-dark)
+/* Search bar input field */
+.search-bar {
+    border: none; /* Remove default border */
+    padding: 12px 15px; /* Add inner padding */
+    font-size: 16px; /* Increase font size */
+    outline: none; /* Remove focus outline */
+    flex: 1; /* Make it grow to fill space */
+    border-top-left-radius: 25px; /* Rounded edges */
+    border-bottom-left-radius: 25px; /* Rounded edges */
+    background-color: #007bff;
+}
+
+/* Search button */
+.search-btn {
+    background-color: #ca0065; /* Primary color */
+    color: rgb(207, 22, 22); /* Button text color */
+    border: none; /* Remove border */
+    padding: 12px 20px; /* Add padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button hover effect */
+.search-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Adjustments for small screens */
+@media (max-width: 576px) {
+    .input-group {
+        border-radius: 20px; /* Slightly smaller on small screens */
+    }
+
+    .search-bar, .search-btn {
+        font-size: 14px; /* Adjust font size */
+        padding: 10px 12px; /* Adjust padding */
+    }
+}
+
+
+
+.card-container{
+    border: 2px solid rgba(102, 51, 153, 0);
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.food-container{
+    margin: 1px;
+}
+.food-card{
+    box-shadow: 10px 10px 10px rgb(73, 60, 248); /* Correct box-shadow syntax */
+    width: 100%;
+    margin-top: 2px;
+    text-align: center;
+    padding: 1px;
+    height: auto;
+    min-height: fit-content;
+    background-color: rgba(250, 151, 151, 0.151);
+    border-radius: 12px;
     
+
 }
-.navbar{
-    background-color: rgba(252, 128, 80, 0.226);
-    border: 1px solid rgb(109, 3, 3);
-    border-radius: 28px;
-    padding: 5px;
+.food-card h3,
+.food-card p,
+.food-card img {
+    margin: 1px 0; /* 1px gap between elements */
+    padding: 0; /* Ensure no extra padding */
+    line-height: 1.6; /* Adjust line spacing */
 }
+#counter-digit{
+color: rgb(250, 245, 245);
+font-weight: bold;
+
+}
+.food-name{
+    color: rgb(233, 9, 39);
+    font-weight: bold;
+}
+.add-item-text{
+    color: rgb(236, 118, 134);
+    font-weight: bold;
+}
+.food-img{
+    width: 100%;
+    border-radius: 10px;
+   
+}
+.food-img-div{
+ padding-top: 12px;
+ padding-bottom: 8px;
+}
+.count-card{
+    border: 3px solid rebeccapurple;
+    box-shadow: 10px 10px 10px rgb(120, 7, 226);
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 5px;
+}
+#food-counter-card {
+    position: fixed; /* Keep the element fixed when scrolling */
+        top: 50%; /* Center it vertically */
+        right: 0; /* Position it on the right side */
+        transform: translateY(-50%); /* Perfectly center it vertically */
+        width: 25%; /* Set a consistent width for the sidebar */
+        background-color: #5a0bec; /* Optional: background for visibility */
+        border: 1px solid #f77373; /* Optional border */
+        padding: 10px; /* Optional padding */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        z-index: 10; /* Keep it above other elements */
+        border-radius: 25px;
+       justify-content: space-around;
+       text-align: center;
+}
+.food-name{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.icon-buttons {
+    display: flex;
+    gap: 0.5px;
+    margin-top: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.icon-btn img {
+    width: 62%;
+    height: 90%;
+    object-fit: contain;
+}
+
+
+
+
+/* Already Added Button */
+.already-added-btn {
+    background-color: #ff9999;
+    color: white;
+    border: 1px solid #cc0000;
+    cursor: not-allowed;
+}
+
+/* Hover Effects for Details Button */
+.Details-btn:hover {
+    background-color: #4caf50;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Default Styles for Add and Details Buttons */
+.Add-btn,
+.Details-btn {
+    padding: 8px 12px;
+    margin: 5px 0;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.Add-btn:hover {
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+
+.not-founded{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+
+/* Footer Styles */
+footer {
+    position: relative;
+    width: 100%;
+    height: 11vh; /* 20% of the viewport height */
+    background-color: #007dfa; /* Dark background color */
+    color: #fff; /* Text color */
+    padding: 20px 0; /* Padding for spacing */
+    text-align: center; /* Center the text */
+}
+
+footer .container {
+    max-width: 100%; /* Ensure container spans full width */
+}
+
+footer .social-links a {
+    margin: 0 8px; /* Space between social icons */
+    font-size: 24px; /* Larger icon size */
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #ff6f61; /* Change color on hover */
+}
+
+/* Media Query for Smaller Devices */
+@media (max-width: 768px) {
+    footer {
+        height: 25vh; /* Increase footer height for smaller screens */
+        padding: 15px 0; /* Adjust padding for small screens */
+    }
+
+    footer .social-links a {
+        font-size: 18px; /* Smaller icons on mobile */
+        margin: 0 10px; /* More spacing for mobile screens */
+    }
+
+    footer .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Media Query for Extra Small Devices (phones in portrait mode) */
+@media (max-width: 576px) {
+    footer {
+        height: 30vh; /* Make footer taller for very small screens */
+        padding: 10px 0; /* Adjust padding */
+    }
+
+    footer .social-links a {
+        font-size: 16px; /* Even smaller icons for extra small devices */
+        margin: 0 12px; /* More spacing for small screens */
+    }
+}
+
+
+/* Navbar Styles */
+.navbar {
+    background-color: #5eaefd50; /* Dark background color */
+    padding: 20px 30px; /* Padding for top and bottom */
+    transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+    border-radius: 18px;
+}
+
+/* Logo Image */
+.icon-size {
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+    object-fit: cover; /* Ensures image stays in shape */
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    color: #fff; /* White color */
+    font-size: 24px; /* Font size for brand */
+    font-weight: 700; /* Bold font weight */
+}
+
+/* Navbar Links */
+.nav-link {
+    color: #f8f9fa !important; /* White text color */
+    font-size: 18px;
+    margin-left: 20px; /* Space between links */
+    transition: color 0.3s ease;
+}
+
+/* Navbar Links Hover */
+.nav-link:hover {
+    color: #ff6f61 !important; /* Change color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Responsive Navbar (Collapsible on smaller screens) */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 10px 20px; /* Less padding on smaller screens */
+    }
+    .icon-size {
+        width: 40px; /* Smaller icon on small screens */
+        height: 40px; /* Smaller icon on small screens */
+    }
+    .nav-link {
+        font-size: 16px; /* Smaller font size on small screens */
+    }
+}
+
+/* Navbar Toggler Button */
+.navbar-toggler {
+    border-color: #fff; /* White border for toggler button */
+}
+
+.navbar-toggler-icon {
+    background-color: #fff; /* White color for toggler icon */
+}
+
+/* Active Link (when clicked) */
+.nav-item.active .nav-link {
+    color: #ff6f61 !important; /* Active link color */
+}
+
+/* Navbar Container */
+.container-fluid {
+    max-width: 100%;
+}
+
+/* Add padding to navbar on large screens */
+@media (min-width: 1200px) {
+    .navbar {
+        padding: 20px 50px;
+    }
+}
+
